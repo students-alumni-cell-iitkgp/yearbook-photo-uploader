@@ -10,6 +10,8 @@
  * http://www.opensource.org/licenses/MIT
  */
 
+ session_start();
+
 class UploadHandler
 {
 
@@ -474,7 +476,7 @@ class UploadHandler
             }
             $name = $this->upcount_name($name);
         }
-        return $name;
+        return $_SESSION['rollnumber'].'-'.$name;
     }
 
     protected function fix_file_extension($file_path, $name, $size, $type, $error,
