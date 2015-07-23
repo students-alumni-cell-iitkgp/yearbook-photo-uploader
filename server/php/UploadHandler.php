@@ -476,7 +476,9 @@ class UploadHandler
             }
             $name = $this->upcount_name($name);
         }
-        return $_SESSION['rollnumber'].'-'.$name;
+        $unique_hash = hash('sha1', $_SESSION['rollnumber'].time());
+        $unique_hash = substr($unique_hash, 0, 10);
+        return $_SESSION['rollnumber'].'-'.$unique_hash.'-'.$name;
     }
 
     protected function fix_file_extension($file_path, $name, $size, $type, $error,
