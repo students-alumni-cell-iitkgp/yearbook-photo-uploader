@@ -5,6 +5,9 @@
     <title>Upload photos for Yearbook 2016</title>
     <style media="screen">
       body {
+		  background-image:url(ybg.jpg);
+		  background-repeat:no-repeat;
+	       background-size:cover;
         text-align: center;
       }
     </style>
